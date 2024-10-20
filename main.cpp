@@ -5,7 +5,6 @@
 #include "debug_info.h"
 #include "dump.h"
 #include "error_keys.h"
-#include "proc.h"
 
 int main(void)
 {
@@ -34,11 +33,11 @@ int main(void)
         PutElem(&my_stack);
     }
 
-    StackDiv(&my_stack);
+//    StackDiv(&my_stack);
 
     DO_DUMP(&my_stack);
 
-    StackOut(&my_stack);
+//    StackOut(&my_stack);
 
     printf("StackDtor returned status: %d\n", StackDtor(&my_stack));
 

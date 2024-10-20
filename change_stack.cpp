@@ -210,7 +210,7 @@ int StackDtor (Stack* stk)
 
     printf("stk->data addr = %p\n", &stk->data[0]);
 
-    free(stk->data);
+    free((StackCell_t*)((char*)stk->data - sizeof(StackCell_t)));
 
     stk->cur_size = 0;
     stk->capacity = 0;
