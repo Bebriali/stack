@@ -1,0 +1,384 @@
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: C:\Users\Мария\Desktop\stack\prog.exe,
+
+ВНЕЗАПНО: Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x7767414D в функции RtlGetCurrentServiceSessionId(). Попытка прочесть данные по адресу 0x008EBE22 в модуле C:\WINDOWS\SYSTEM32\ntdll.dll. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400], Instance: 0x005072FC (32-bit), Flags: Cmdre0, Thread: 0x218C (Main), GetLastError(): 183 (Невозможно создать файл, так как он уже существует). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x7767414D in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlGetCurrentServiceSessionId()
+# 1 0x776B7FED in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlGetNtGlobalFlags()
+# 2 0x77673D36 in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlFreeHeap()
+# 3 0x75C77379 in C:\WINDOWS\System32\msvcrt.dll: free()
+
+# 4 0x0042E01E in C:\Users\Мария\Desktop\stack\prog.exe: StackDtor() at C:/Users/Мария/Desktop/stack/change_stack.cpp (239):
+
+    237:     printf("stk->data addr = %p\n", &stk->data[0]);
+    238: 
+=>  239:     free(stk->data);
+    240: 
+    241:     stk->cur_size = 0;
+
+# 5 0x0042C37B in C:\Users\Мария\Desktop\stack\prog.exe: main() at C:/Users/Мария/Desktop/stack/main.cpp (41):
+
+     39:     DO_DUMP(&my_stack);
+     40: 
+=>   41:     printf("StackDtor returned status: %d\n", StackDtor(&my_stack));
+     42: 
+     43:     return 0;
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\users\мария\codeblocks\mingw\include\txlib.h
+Compiled:	Oct 11 2024 16:28:33, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Oct 11 2024 16:28:43
+
+Run file:	C:\Users\Мария\Desktop\stack\prog.exe
+Directory:	C:\Users\Мария\Desktop\stack
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\Мария\Desktop\stack\prog.exe,
+
+ВНЕЗАПНО: signal (11, 0x00): SIGSEGV: Доступ по неверному указателю. Ставьте ассерты! 
+
+Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x7767414D в функции RtlGetCurrentServiceSessionId(). Попытка прочесть данные по адресу 0x008EBE22 в модуле C:\WINDOWS\SYSTEM32\ntdll.dll. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400], Instance: 0x005072FC (32-bit), Flags: Cmdre0, Thread: 0x218C (Main), GetLastError(): 183 (Невозможно создать файл, так как он уже существует). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x7767414D in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlGetCurrentServiceSessionId()
+# 1 0x776B7FED in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlGetNtGlobalFlags()
+# 2 0x77673D36 in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlFreeHeap()
+# 3 0x75C77379 in C:\WINDOWS\System32\msvcrt.dll: free()
+
+# 4 0x0042E01E in C:\Users\Мария\Desktop\stack\prog.exe: StackDtor() at C:/Users/Мария/Desktop/stack/change_stack.cpp (239):
+
+    237:     printf("stk->data addr = %p\n", &stk->data[0]);
+    238: 
+=>  239:     free(stk->data);
+    240: 
+    241:     stk->cur_size = 0;
+
+# 5 0x0042C37B in C:\Users\Мария\Desktop\stack\prog.exe: main() at C:/Users/Мария/Desktop/stack/main.cpp (41):
+
+     39:     DO_DUMP(&my_stack);
+     40: 
+=>   41:     printf("StackDtor returned status: %d\n", StackDtor(&my_stack));
+     42: 
+     43:     return 0;
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\users\мария\codeblocks\mingw\include\txlib.h
+Compiled:	Oct 11 2024 16:28:33, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Oct 11 2024 16:28:43
+
+Run file:	C:\Users\Мария\Desktop\stack\prog.exe
+Directory:	C:\Users\Мария\Desktop\stack
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: C:\Users\Мария\Desktop\stack\prog.exe,
+
+ВНЕЗАПНО: Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x7767414D в функции RtlGetCurrentServiceSessionId(). Попытка прочесть данные по адресу 0x0105E1BA в модуле C:\WINDOWS\SYSTEM32\ntdll.dll. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400], Instance: 0x005072FC (32-bit), Flags: Cmdre0, Thread: 0x3988 (Main), GetLastError(): 183 (Невозможно создать файл, так как он уже существует). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x7767414D in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlGetCurrentServiceSessionId()
+# 1 0x776B7FED in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlGetNtGlobalFlags()
+# 2 0x77673D36 in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlFreeHeap()
+# 3 0x75C77379 in C:\WINDOWS\System32\msvcrt.dll: free()
+
+# 4 0x0042E036 in C:\Users\Мария\Desktop\stack\prog.exe: StackDtor() at C:/Users/Мария/Desktop/stack/change_stack.cpp (230):
+
+    228:     printf("stk->data addr = %p\n", &stk->data[0]);
+    229: 
+=>  230:     free(stk->data);
+    231: 
+    232:     stk->cur_size = 0;
+
+# 5 0x0042C37B in C:\Users\Мария\Desktop\stack\prog.exe: main() at C:/Users/Мария/Desktop/stack/main.cpp (41):
+
+     39:     DO_DUMP(&my_stack);
+     40: 
+=>   41:     printf("StackDtor returned status: %d\n", StackDtor(&my_stack));
+     42: 
+     43:     return 0;
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\users\мария\codeblocks\mingw\include\txlib.h
+Compiled:	Oct 11 2024 16:37:40, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Oct 11 2024 16:37:46
+
+Run file:	C:\Users\Мария\Desktop\stack\prog.exe
+Directory:	C:\Users\Мария\Desktop\stack
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\Мария\Desktop\stack\prog.exe,
+
+ВНЕЗАПНО: signal (11, 0x00): SIGSEGV: Доступ по неверному указателю. Ставьте ассерты! 
+
+Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x7767414D в функции RtlGetCurrentServiceSessionId(). Попытка прочесть данные по адресу 0x0105E1BA в модуле C:\WINDOWS\SYSTEM32\ntdll.dll. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400], Instance: 0x005072FC (32-bit), Flags: Cmdre0, Thread: 0x3988 (Main), GetLastError(): 183 (Невозможно создать файл, так как он уже существует). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x7767414D in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlGetCurrentServiceSessionId()
+# 1 0x776B7FED in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlGetNtGlobalFlags()
+# 2 0x77673D36 in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlFreeHeap()
+# 3 0x75C77379 in C:\WINDOWS\System32\msvcrt.dll: free()
+
+# 4 0x0042E036 in C:\Users\Мария\Desktop\stack\prog.exe: StackDtor() at C:/Users/Мария/Desktop/stack/change_stack.cpp (230):
+
+    228:     printf("stk->data addr = %p\n", &stk->data[0]);
+    229: 
+=>  230:     free(stk->data);
+    231: 
+    232:     stk->cur_size = 0;
+
+# 5 0x0042C37B in C:\Users\Мария\Desktop\stack\prog.exe: main() at C:/Users/Мария/Desktop/stack/main.cpp (41):
+
+     39:     DO_DUMP(&my_stack);
+     40: 
+=>   41:     printf("StackDtor returned status: %d\n", StackDtor(&my_stack));
+     42: 
+     43:     return 0;
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\users\мария\codeblocks\mingw\include\txlib.h
+Compiled:	Oct 11 2024 16:37:40, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Oct 11 2024 16:37:46
+
+Run file:	C:\Users\Мария\Desktop\stack\prog.exe
+Directory:	C:\Users\Мария\Desktop\stack
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\Мария\Desktop\stack\prog.exe,
+
+ВНЕЗАПНО: signal (22, 0x00): SIGABRT: Аварийное завершение программы, вызвана функция abort(). 
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#1: TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400], Instance: 0x005072FC (32-bit), Flags: Cmdre0, Thread: 0x2464 (Main), GetLastError(): 183 (Невозможно создать файл, так как он уже существует). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00411881 in C:\Users\Мария\Desktop\stack\prog.exe: (anonymous namespace)::TX::_txOnSignal() at c:/users/мария/codeblocks/mingw/include/txlib.h (11078)
+# 1 0x75C871F1 in C:\WINDOWS\System32\msvcrt.dll: raise()
+# 2 0x75C8B69B in C:\WINDOWS\System32\msvcrt.dll: abort()
+# 3 0x75C8802A in C:\WINDOWS\System32\msvcrt.dll: assert()
+
+# 4 0x0042D8F5 in C:\Users\Мария\Desktop\stack\prog.exe: StackPush() at C:/Users/Мария/Desktop/stack/change_stack.cpp (72):
+
+     70:     }
+     71: 
+=>   72:     assert(stk->cur_size < stk->capacity);
+     73: 
+     74:     stk->data[stk->cur_size] = value;
+
+# 5 0x0042E2C2 in C:\Users\Мария\Desktop\stack\prog.exe: StackDiv() at C:/Users/Мария/Desktop/stack/proc.cpp (19):
+
+     17:     StackCell_t a = 0; StackPop(stk, &a);
+     18:     StackCell_t b = 0; StackPop(stk, &b);
+=>   19:     StackPush(stk, b / a);
+     20: }
+     21: 
+
+# 6 0x0042C34B in C:\Users\Мария\Desktop\stack\prog.exe: main() at C:/Users/Мария/Desktop/stack/main.cpp (37):
+
+     35:     }
+     36: 
+=>   37:     StackDiv(&my_stack);
+     38: 
+     39:     DO_DUMP(&my_stack);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\users\мария\codeblocks\mingw\include\txlib.h
+Compiled:	Oct 11 2024 21:28:11, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Oct 11 2024 21:28:19
+
+Run file:	C:\Users\Мария\Desktop\stack\prog.exe
+Directory:	C:\Users\Мария\Desktop\stack
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: C:\Users\Мария\Desktop\stack\prog.exe,
+
+ВНЕЗАПНО: Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x7767414D в функции RtlGetCurrentServiceSessionId(). Попытка прочесть данные по адресу 0x00F7E772 в модуле C:\WINDOWS\SYSTEM32\ntdll.dll. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400], Instance: 0x005072FC (32-bit), Flags: Cmdre0, Thread: 0x294C (Main), GetLastError(): 183 (Невозможно создать файл, так как он уже существует). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x7767414D in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlGetCurrentServiceSessionId()
+# 1 0x776B7FED in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlGetNtGlobalFlags()
+# 2 0x77673D36 in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlFreeHeap()
+# 3 0x75C77379 in C:\WINDOWS\System32\msvcrt.dll: free()
+
+# 4 0x0042E006 in C:\Users\Мария\Desktop\stack\prog.exe: StackDtor() at C:/Users/Мария/Desktop/stack/change_stack.cpp (213):
+
+    211:     printf("stk->data addr = %p\n", &stk->data[0]);
+    212: 
+=>  213:     free(stk->data);
+    214: 
+    215:     stk->cur_size = 0;
+
+# 5 0x0042C387 in C:\Users\Мария\Desktop\stack\prog.exe: main() at C:/Users/Мария/Desktop/stack/main.cpp (43):
+
+     41:     StackOut(&my_stack);
+     42: 
+=>   43:     printf("StackDtor returned status: %d\n", StackDtor(&my_stack));
+     44: 
+     45:     return 0;
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\users\мария\codeblocks\mingw\include\txlib.h
+Compiled:	Oct 15 2024 16:46:23, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Oct 15 2024 16:46:41
+
+Run file:	C:\Users\Мария\Desktop\stack\prog.exe
+Directory:	C:\Users\Мария\Desktop\stack
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\Мария\Desktop\stack\prog.exe,
+
+ВНЕЗАПНО: signal (11, 0x00): SIGSEGV: Доступ по неверному указателю. Ставьте ассерты! 
+
+Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x7767414D в функции RtlGetCurrentServiceSessionId(). Попытка прочесть данные по адресу 0x00F7E772 в модуле C:\WINDOWS\SYSTEM32\ntdll.dll. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400], Instance: 0x005072FC (32-bit), Flags: Cmdre0, Thread: 0x294C (Main), GetLastError(): 183 (Невозможно создать файл, так как он уже существует). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x7767414D in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlGetCurrentServiceSessionId()
+# 1 0x776B7FED in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlGetNtGlobalFlags()
+# 2 0x77673D36 in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlFreeHeap()
+# 3 0x75C77379 in C:\WINDOWS\System32\msvcrt.dll: free()
+
+# 4 0x0042E006 in C:\Users\Мария\Desktop\stack\prog.exe: StackDtor() at C:/Users/Мария/Desktop/stack/change_stack.cpp (213):
+
+    211:     printf("stk->data addr = %p\n", &stk->data[0]);
+    212: 
+=>  213:     free(stk->data);
+    214: 
+    215:     stk->cur_size = 0;
+
+# 5 0x0042C387 in C:\Users\Мария\Desktop\stack\prog.exe: main() at C:/Users/Мария/Desktop/stack/main.cpp (43):
+
+     41:     StackOut(&my_stack);
+     42: 
+=>   43:     printf("StackDtor returned status: %d\n", StackDtor(&my_stack));
+     44: 
+     45:     return 0;
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\users\мария\codeblocks\mingw\include\txlib.h
+Compiled:	Oct 15 2024 16:46:23, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Oct 15 2024 16:46:40
+
+Run file:	C:\Users\Мария\Desktop\stack\prog.exe
+Directory:	C:\Users\Мария\Desktop\stack
+
+--------------------------------------------------
